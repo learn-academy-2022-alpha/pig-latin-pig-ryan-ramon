@@ -9,14 +9,14 @@ class App extends Component{
     this.state = {
       // "phrase" is the text entered by the user - right now there are test words hard coded to make the process of testing your code faster and easier
       // ACTION ITEM: when you are ready for your full user experience, delete the test words so phrase is assigned an empty string
-      phrase: "alpha through yummy squeal queen fry",
+      phrase: "alpha",
       // "phraseTranslated" is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the "submit" button
       phraseTranslated: "This is where your translated sentence will appear."
     }
   }
 
   // The "myPigLatinCodeHere" function is where you will put your logic to convert the sentence entered by the user to Pig Latin
-
+  // FUNCTION NAME 
   myPigLatinCodeHere = () => {
     // the variable "userInput" will contain the text input from the user modified into an array of words
     // no need to change this variable
@@ -34,6 +34,30 @@ class App extends Component{
       console.log("vowelsArray:", vowelsArray)
 
       // your code here!
+      // find the first vowel 
+      // if word begins with vowel return "way" to the end
+      // if word Begins with "qu" find first non-u vowel and 
+      let newStr = ""
+
+      if(currentWord[0] === vowelsArray[0]){
+      // - For words beginning with a vowel, add "way" to the end.
+      // ex. away => awayway
+        return newStr + "way"
+        // - For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
+       // ex. pharmacist => armacistphay
+      } else if (currentWord[1] !== vowelsArray[0]){
+
+      }
+      
+      
+      
+      // - If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
+      // ex. queen => eenquay
+      // ex. squeal => ealsquay
+      // - "y" is treated like a vowel in appropriate circumstances.
+      // ex. yellow => ellowyay
+      // ex. fry => yfray
+
 
       // Remember: console.log is your friend :)
 
@@ -41,7 +65,7 @@ class App extends Component{
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return currentWord
     })
-
+   
 
     // joining the array back to a string of translated words
     // no need to change this variable
